@@ -4,5 +4,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
-COPY requirements.txt .
-RUN pip install   --no-cache-dir -r requirements.txt
+COPY requirements.in .
+RUN pip install --no-cache-dir pip-tools
+RUN pip-compile.exe -vv    --resolver backtracking  .\requirements.in
+RUN rm .\requirements.in && pip install   --no-cache-dir -r requirements.txt
+
