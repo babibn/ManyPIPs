@@ -6,6 +6,6 @@ RUN apt-get update && apt-get install -y \
 # Install dependencies
 COPY requirements.in .
 RUN pip install --no-cache-dir pip-tools
-RUN pip-compile -vv    --resolver backtracking  .\requirements.in
+RUN pip-compile -vv    --resolver backtracking  ./requirements.in
 RUN rm .\requirements.in && pip install   --no-cache-dir -r requirements.txt
 
