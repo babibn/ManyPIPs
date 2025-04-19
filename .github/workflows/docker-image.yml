@@ -20,12 +20,23 @@ jobs:
 
       - name: Set DATE_TAG
         run: echo "DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
-       
+
       - name: Build the Docker image
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/manypips:latest -t ${{ secrets.DOCKERHUB_USERNAME }}/manypips:${{ env.DATE_TAG }} .
+
+        
+      - name: Build the Multipart Docker image
+        working-directory: ./Multipart
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/manypips:multipart -t ${{ secrets.DOCKERHUB_USERNAME }}/manypips:multipart${{ env.DATE_TAG }} .
 
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:latest
 
-      - name: Push the Docker image (date tag)
+      - name: Push the Multipart Docker image (date tag)
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:${{ env.DATE_TAG }}
+
+      - name: Push the Docker image
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:multipart
+
+      - name: Push the Multipart Docker image (date tag)
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:multipart${{ env.DATE_TAG }}

@@ -1,0 +1,5 @@
+ujson==5.10.0
+uritemplate==4.1.1
+urllib3==2.4.0
+uvicorn==0.34.1
+uvloop==0.21.0

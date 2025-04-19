@@ -1,0 +1,38 @@
+FROM python:3.12-slim
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /pythonpips
+# Install dependencies
+COPY requirements_*.txt .
+# RUN pip install --no-cache-dir pip-tools
+# RUN pip-compile -vv  -r  --resolver backtracking  -o ./requirements.txt ./requirements.in && rm -rvf ~/.cache
+# RUN rm ./requirements.in && pip install   --no-cache-dir -r requirements.txt
+RUN [ ! -f requirements_a.txt ] || pip install   --no-cache-dir -r requirements_a.txt
+RUN [ ! -f requirements_b.txt ] || pip install   --no-cache-dir -r requirements_b.txt
+RUN [ ! -f requirements_c.txt ] || pip install   --no-cache-dir -r requirements_c.txt
+RUN [ ! -f requirements_d.txt ] || pip install   --no-cache-dir -r requirements_d.txt
+RUN [ ! -f requirements_e.txt ] || pip install   --no-cache-dir -r requirements_e.txt
+RUN [ ! -f requirements_f.txt ] || pip install   --no-cache-dir -r requirements_f.txt
+RUN [ ! -f requirements_g.txt ] || pip install   --no-cache-dir -r requirements_g.txt
+RUN [ ! -f requirements_h.txt ] || pip install   --no-cache-dir -r requirements_h.txt
+RUN [ ! -f requirements_i.txt ] || pip install   --no-cache-dir -r requirements_i.txt
+RUN [ ! -f requirements_j.txt ] || pip install   --no-cache-dir -r requirements_j.txt
+RUN [ ! -f requirements_k.txt ] || pip install   --no-cache-dir -r requirements_k.txt
+RUN [ ! -f requirements_l.txt ] || pip install   --no-cache-dir -r requirements_l.txt
+RUN [ ! -f requirements_m.txt ] || pip install   --no-cache-dir -r requirements_m.txt
+RUN [ ! -f requirements_n.txt ] || pip install   --no-cache-dir -r requirements_n.txt
+RUN [ ! -f requirements_o.txt ] || pip install   --no-cache-dir -r requirements_o.txt
+RUN [ ! -f requirements_p.txt ] || pip install   --no-cache-dir -r requirements_p.txt
+RUN [ ! -f requirements_q.txt ] || pip install   --no-cache-dir -r requirements_q.txt
+RUN [ ! -f requirements_r.txt ] || pip install   --no-cache-dir -r requirements_r.txt
+RUN [ ! -f requirements_s.txt ] || pip install   --no-cache-dir -r requirements_s.txt
+RUN [ ! -f requirements_t.txt ] || pip install   --no-cache-dir -r requirements_t.txt
+RUN [ ! -f requirements_u.txt ] || pip install   --no-cache-dir -r requirements_u.txt
+RUN [ ! -f requirements_v.txt ] || pip install   --no-cache-dir -r requirements_v.txt
+RUN [ ! -f requirements_w.txt ] || pip install   --no-cache-dir -r requirements_w.txt
+RUN [ ! -f requirements_x.txt ] || pip install   --no-cache-dir -r requirements_x.txt
+RUN [ ! -f requirements_y.txt ] || pip install   --no-cache-dir -r requirements_y.txt
+RUN [ ! -f requirements_z.txt ] || pip install   --no-cache-dir -r requirements_z.txt
+WORKDIR /app

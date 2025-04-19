@@ -1,0 +1,5 @@
+idna==3.10
+importlib_metadata==8.6.1
+iniconfig==2.1.0
+inquirerpy==0.3.4
+itsdangerous==2.2.0
