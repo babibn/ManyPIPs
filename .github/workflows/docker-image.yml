@@ -32,10 +32,10 @@ jobs:
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:latest
 
-      - name: Push the Multipart Docker image (date tag)
+      - name: Push the Docker image (date tag)
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:${{ env.DATE_TAG }}
 
-      - name: Push the Docker image
+      - name: Push the Multipart Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/manypips:multipart
 
       - name: Push the Multipart Docker image (date tag)
